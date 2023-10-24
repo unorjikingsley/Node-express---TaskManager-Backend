@@ -3,6 +3,8 @@ const app = express();
 const tasks = require('./routes/tasks');
 const connectDB = require('./db/connect')
 require('dotenv').config()  // secret variables 
+const notFound = require('./middleware/not-found') // customize err msg for wrong links
+const errorHandleMiddleware = require('./middleware/error-handler') // handle error
 
 //middleware
 app.use(express.static('./public')) // static files
@@ -22,7 +24,10 @@ app.use('/api/v1/tasks', tasks);
 // app.patch('/api/v1/tasks/:id, (req, res) => {})            - update task
 // app.delete('/api/v1/tasks/:id, (req, res) => {})           - delete a single task
 
-const port = 3000;
+app.use(notFound); // customize err msg for wrong links
+app.use(errorHandleMiddleware); // customize err msg for wrong links
+
+const port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
