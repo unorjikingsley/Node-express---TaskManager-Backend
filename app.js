@@ -5,7 +5,8 @@ const connectDB = require('./db/connect')
 require('dotenv').config()  // secret variables 
 
 //middleware
-// app.use(express.json());
+app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 //routes
 app.get('/hello', (req, res) => 
