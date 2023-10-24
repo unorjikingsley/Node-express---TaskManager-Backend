@@ -103,7 +103,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 - cd my-folder
-- git clone https://github.com/unorjikingsley/Node-express---TaskManager.git
+- git clone https://github.com/unorjikingsley/Node-express---TaskManager-Backend.git
 ### Install
 
 Install this project with:
