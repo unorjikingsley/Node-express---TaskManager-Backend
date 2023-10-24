@@ -5,13 +5,14 @@ const connectDB = require('./db/connect')
 require('dotenv').config()  // secret variables 
 
 //middleware
+app.use(express.static('./public')) // static files
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
 //routes
-app.get('/hello', (req, res) => 
-  res.send('first node project')
-)
+// app.get('/hello', (req, res) => 
+//   res.send('first node project')
+// )
 
 app.use('/api/v1/tasks', tasks);
 
